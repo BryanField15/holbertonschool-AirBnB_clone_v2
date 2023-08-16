@@ -11,6 +11,7 @@ def hello_route():
     """First route"""
     return "Hello HBNB!"
 
+
 @app.route("/hbnb", strict_slashes=False)
 def hbnb_route():
     """Second route"""
