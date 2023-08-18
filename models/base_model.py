@@ -15,7 +15,7 @@ class BaseModel:
     updated_at = Column(DateTime, nullable=False, default=datetime.utcnow())
 
     def __init__(self, *args, **kwargs):
- """Instantiates a new model"""
+        """Instantiates a new model"""
         attributes_ignore_list = ["__class__"]
         attribute_datetime_list = ['created_at', 'updated_at']
         time_format = "%Y-%m-%dT%H:%M:%S.%f"
