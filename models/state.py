@@ -23,7 +23,7 @@ class State(BaseModel, Base):
             for key, value in all_cities_dict.items():
                 if self.id == value.state_id:
                     return_list.append(value)
-                    return return_list
+            return return_list
     else:
         cities = relationship(
             "City",
