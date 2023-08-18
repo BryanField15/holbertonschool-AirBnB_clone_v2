@@ -34,6 +34,12 @@ class BaseModel:
                 setattr(self, key, value)
             self.__dict__.update(kwargs)
 
+            if 'id' not in kwargs:
+                setattr(self, 'id', str(uuid.uuid4()))
+            if 'created_at' not in kwargs:
+                setattr(self, 'created_at', datetime.now())
+            if 'update_at' not in kwargs:
+                setattr(self, 'updated_at', datetime.now())
 
     def __str__(self):
         """Returns a string representation of the instance"""
