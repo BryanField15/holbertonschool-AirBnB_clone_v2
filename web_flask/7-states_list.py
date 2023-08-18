@@ -8,12 +8,14 @@ from models.state import State
 
 app = Flask(__name__)
 
+
 @app.route("/states_list", strict_slashes=False)
 def states_list():
     """html page with a list of all state objects sorted az"""
     states = storage.all(State)
     sorted_states = sorted(states, key=lambda state: state.name)
     return render_template("7-states_list.html", states=sorted_states)
+
 
 @app.teardown_appcontext
 def teardown_session(exception):
